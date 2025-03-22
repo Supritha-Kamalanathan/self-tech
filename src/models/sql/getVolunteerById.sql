@@ -1,0 +1,1 @@
+SELECT * FROM volunteers WHERE id = $1;

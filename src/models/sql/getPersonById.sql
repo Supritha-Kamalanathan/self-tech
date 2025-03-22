@@ -1,0 +1,1 @@
+SELECT * FROM homeless_people WHERE id = $1; 

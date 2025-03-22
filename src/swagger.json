@@ -1,0 +1,633 @@
+{
+	"openapi": "3.0.0",
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"VolunteerDTO": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"gender": {
+						"type": "string"
+					},
+					"dob": {
+						"type": "string"
+					},
+					"photo": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"phone_number": {
+						"type": "string"
+					},
+					"address": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"name",
+					"gender",
+					"dob",
+					"photo",
+					"email",
+					"phone_number",
+					"address"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"TransferDTO": {
+				"properties": {
+					"homeless_person_id": {
+						"type": "number",
+						"format": "double"
+					},
+					"oldage_home_id": {
+						"type": "number",
+						"format": "double"
+					},
+					"volunteer_id": {
+						"type": "number",
+						"format": "double"
+					},
+					"status": {
+						"type": "string"
+					},
+					"transfer_date": {
+						"type": "string"
+					},
+					"notes": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"homeless_person_id",
+					"oldage_home_id",
+					"volunteer_id",
+					"status",
+					"transfer_date",
+					"notes"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"OldAgeHomeDTO": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"latitude": {
+						"type": "number",
+						"format": "double"
+					},
+					"longitude": {
+						"type": "number",
+						"format": "double"
+					},
+					"address": {
+						"type": "string"
+					},
+					"available_capacity": {
+						"type": "number",
+						"format": "double"
+					},
+					"primary_contact_name": {
+						"type": "string"
+					},
+					"primary_contact_phone": {
+						"type": "string"
+					},
+					"alternate_contact_name": {
+						"type": "string"
+					},
+					"alternate_contact_phone": {
+						"type": "string"
+					},
+					"website": {
+						"type": "string"
+					},
+					"accepting_residents": {
+						"type": "boolean"
+					}
+				},
+				"required": [
+					"name",
+					"latitude",
+					"longitude",
+					"address",
+					"available_capacity",
+					"primary_contact_name",
+					"primary_contact_phone",
+					"accepting_residents"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"HomelessPersonDTO": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"age": {
+						"type": "number",
+						"format": "double"
+					},
+					"gender": {
+						"type": "string"
+					},
+					"dob": {
+						"type": "string"
+					},
+					"willing_to_move": {
+						"type": "boolean"
+					},
+					"has_id_proof": {
+						"type": "boolean"
+					},
+					"notes": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"name",
+					"age",
+					"gender",
+					"dob",
+					"willing_to_move",
+					"has_id_proof",
+					"notes"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"EncounterDTO": {
+				"properties": {
+					"volunteer_id": {
+						"type": "number",
+						"format": "double"
+					},
+					"latitude": {
+						"type": "number",
+						"format": "double"
+					},
+					"longitude": {
+						"type": "number",
+						"format": "double"
+					},
+					"date": {
+						"type": "string"
+					},
+					"notes": {
+						"type": "string"
+					},
+					"photo": {
+						"type": "string"
+					},
+					"num_of_people": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"volunteer_id",
+					"latitude",
+					"longitude",
+					"date",
+					"notes",
+					"photo",
+					"num_of_people"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ContributionDTO": {
+				"properties": {
+					"volunteer_id": {
+						"type": "number",
+						"format": "double"
+					},
+					"resource_type": {
+						"type": "string"
+					},
+					"quantity": {
+						"type": "number",
+						"format": "double"
+					},
+					"latitude": {
+						"type": "number",
+						"format": "double"
+					},
+					"longitude": {
+						"type": "number",
+						"format": "double"
+					},
+					"notes": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"volunteer_id",
+					"resource_type",
+					"quantity",
+					"latitude",
+					"longitude",
+					"notes"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"LoginResponseDTO": {
+				"properties": {
+					"volunteer_id": {
+						"type": "number",
+						"format": "double"
+					},
+					"name": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"volunteer_id",
+					"name",
+					"email"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"LoginDTO": {
+				"properties": {
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"email",
+					"password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {}
+	},
+	"info": {
+		"title": "self-tech",
+		"version": "1.0.0",
+		"license": {
+			"name": "ISC"
+		},
+		"contact": {}
+	},
+	"paths": {
+		"/volunteers": {
+			"post": {
+				"operationId": "RegisterVolunteer",
+				"responses": {
+					"201": {
+						"description": "Created",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"volunteer_id": {
+											"type": "number",
+											"format": "double"
+										},
+										"message": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"volunteer_id",
+										"message"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"volunteers"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/VolunteerDTO"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/volunteers/{id}": {
+			"get": {
+				"operationId": "GetVolunteerById",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {}
+							}
+						}
+					}
+				},
+				"tags": [
+					"volunteers"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "id",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			}
+		},
+		"/transfers": {
+			"post": {
+				"operationId": "LogTransfer",
+				"responses": {
+					"201": {
+						"description": "Created",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"transfer_id": {
+											"type": "number",
+											"format": "double"
+										},
+										"message": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"transfer_id",
+										"message"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"transfers"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/TransferDTO"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/oldage-homes": {
+			"post": {
+				"operationId": "RegisterHome",
+				"responses": {
+					"201": {
+						"description": "Created",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"home_id": {
+											"type": "number",
+											"format": "double"
+										},
+										"message": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"home_id",
+										"message"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"oldage-homes"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/OldAgeHomeDTO"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/people": {
+			"post": {
+				"operationId": "AddOrUpdatePerson",
+				"responses": {
+					"201": {
+						"description": "Created",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"person_id": {
+											"type": "number",
+											"format": "double"
+										},
+										"message": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"person_id",
+										"message"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"people"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/HomelessPersonDTO"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/encounters": {
+			"post": {
+				"operationId": "LogEncounter",
+				"responses": {
+					"201": {
+						"description": "Created",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"encounter_id": {
+											"type": "number",
+											"format": "double"
+										},
+										"message": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"encounter_id",
+										"message"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"encounters"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/EncounterDTO"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/contributions": {
+			"post": {
+				"operationId": "LogContribution",
+				"responses": {
+					"201": {
+						"description": "Created",
+						"content": {
+							"application/json": {
+								"schema": {
+									"properties": {
+										"contribution_id": {
+											"type": "number",
+											"format": "double"
+										},
+										"message": {
+											"type": "string"
+										}
+									},
+									"required": [
+										"contribution_id",
+										"message"
+									],
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"contributions"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ContributionDTO"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/auth/login": {
+			"post": {
+				"operationId": "Login",
+				"responses": {
+					"200": {
+						"description": "Success",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/LoginResponseDTO"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"auth"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/LoginDTO"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}
